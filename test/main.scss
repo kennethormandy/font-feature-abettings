@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "Klinic Slab";
+  font-weight: 400;
+}
+
+body {
+  font-family: "Klinic Slab";
+  max-width: 1000px;
+  margin: 2em auto;
+  font-size: 2em;
+  -webkit-font-feature-settings: "liga" 1;
+     -moz-font-feature-settings: "liga" 1;
+          font-feature-settings: "liga" 1;
+}
+
+.test {
+  // opacity: 0.5;
+  display: block;
+  position: relative;
+  width: 500px;
+  float: right;
+  margin: 1rem 0 0 0;
+  font-size: 5rem;
+  strong {
+    font-family: Verdana;
+    font-size: 1rem;
+  }
+}
+
+.mark {
+  background: transparent;
+  &:before {
+    // content: attr(data-content);
+    // content: '';
+    display: inline-block;
+    color: transparent;
+    z-index: -1;
+    position: absolute;
+    // padding: 0.25em 0.5em;
+    // transform: translate(-0.5em, -0.25em);
+    // border-radius: 50%;
+  }
+}
+
+.mark--liga {
+  color: tomato;
+  &:before {
+    text-shadow: 0 3px 0 rgba(tomato, 0.5);
+    background: rgba(tomato, 0.5);
+  }
+}
+
+[contenteditable] {
+  &:focus {
+    outline: 0;
+  }
+}

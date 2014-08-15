@@ -1,0 +1,33 @@
+{
+  "name": "font-feature-abetting",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "https://kennethormandy.com",
+  "author": "Kenneth Ormandy <hello@kennethormandy.com> (http://kennethormandy.com)",
+  "license": "MIT",
+  "private": true,
+  "repository": "git@github.com:kennethormandy/font-feature-abetting.git",
+  "keywords": [],
+  "files": [
+    "font-feature-abettings.js",
+    "font-feature-abettings.min.js"
+  ],
+  "scripts": {
+    "build-js": "browserify font-feature-abettings.js -o font-feature-abettings.min.js",
+    "build": "npm run build-js",
+    "watch-js": "watchify font-feature-abettings.js -o font-feature-abettings.min.js -dv",
+    "watch": "npm run watch-js",
+    "build-test-js": "browserify -t decomponentify test/test.js -o test/test.min.js",
+    "start": "npm run watch-js & harp server -p 9040 & open http://localhost:9040/test",
+    "test": "echo \"Error: no test specified…yet! Pull requests on kennethormandy/font-feature-abetting are greatly appriciated.\" && exit 1"
+  },
+  "dependencies": {
+    "opentype": "~0.1.2",
+    "blast-text": "~1.1.1"
+  },
+  "devDependencies": {
+    "browserify": "~5.10.0",
+    "decomponentify": "0.0.3",
+    "watchify": "~1.0.2"
+  }
+}
