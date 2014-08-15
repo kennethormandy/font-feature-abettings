@@ -4,3 +4,9 @@
 ***
 -->
 # Font Feature Abetting
+
+## License
+
+The MIT License (MIT)
+
+Copyright © 2014 [Kenneth Ormandy](http://kennethormandy.com)
