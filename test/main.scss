@@ -50,6 +50,30 @@ body {
   }
 }
 
+.mark--dlig {
+  color: orange;
+  &:before {
+    text-shadow: 0 3px 0 rgba(tomato, 0.5);
+    background: rgba(tomato, 0.5);
+  }
+}
+
+.mark--salt {
+  color: yellow;
+  &:before {
+    text-shadow: 0 3px 0 rgba(tomato, 0.5);
+    background: rgba(tomato, 0.5);
+  }
+}
+
+.mark--ss01 {
+  color: purple;
+  &:before {
+    text-shadow: 0 3px 0 rgba(tomato, 0.5);
+    background: rgba(tomato, 0.5);
+  }
+}
+
 [contenteditable] {
   &:focus {
     outline: 0;
