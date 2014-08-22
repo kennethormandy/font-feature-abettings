@@ -1,5 +1,5 @@
 /*!
- * Font Feature Abettings v0.0.1
+ * Font Feature Abettings v0.0.2
  * Reluctantly polyfills OpenType font-feature-settings in Safari, et al.
  * http://kennethormandy.com
  * Copyright © 2014 Kenneth Ormandy. Available under the MIT License.
