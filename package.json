@@ -22,8 +22,6 @@
     "test": "echo \"Error: no test specified…yet! Pull requests on kennethormandy/font-feature-abetting are greatly appriciated.\" && exit 1"
   },
   "dependencies": {
-    "opentype": "~0.1.2",
-    "blast-text": "~1.1.1"
   },
   "devDependencies": {
     "browserify": "~5.10.0",
