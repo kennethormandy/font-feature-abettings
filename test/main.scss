@@ -66,6 +66,24 @@ body {
   }
 }
 
+.mark--tnum,
+.mark--pnum {
+  color: teal;
+  &:before {
+    text-shadow: 0 3px 0 rgba(tomato, 0.5);
+    background: rgba(tomato, 0.5);
+  }
+}
+
+.mark--lnum,
+.mark--onum {
+  color: pink;
+  &:before {
+    text-shadow: 0 3px 0 rgba(tomato, 0.5);
+    background: rgba(tomato, 0.5);
+  }
+}
+
 .mark--ss01 {
   color: purple;
   &:before {
