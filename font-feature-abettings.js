@@ -114,8 +114,8 @@ window.fontFeatureAbettings = (function(el) {
             e.setAttribute('data-content', portion.text);
             e.setAttribute('data-feat', ft);
             e.setAttribute('data-highlighted', true);
-            addClass(e, 'mark');
-            addClass(e, 'mark--' + ft);
+            addClass(e, 'is-feat');
+            addClass(e, 'is-' + ft);
             e.innerHTML = portion.text;
             return e;
           }

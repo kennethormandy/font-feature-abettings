@@ -1,3 +1,15 @@
+// Variables
+
+$color-feat: #D9D9D9;
+$color-liga: #F04423;
+$color-dlig: #F28A35;
+$color-swsh: #3ACAE0;
+$color-calt: #91C03E;
+$color-salt: #F2C647;
+$color-titl: #ED6BA6;
+$color-onum: #DBCC4C;
+$color-lnum: #C0B49A;
+
 @font-face {
   font-family: "Klinic Slab";
   font-weight: 400;
@@ -11,6 +23,12 @@ body {
   -webkit-font-feature-settings: "liga" 1, "dlig" 1;
      -moz-font-feature-settings: "liga" 1, "dlig" 1;
           font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+[contenteditable] {
+  &:focus {
+    outline: 0;
+  }
 }
 
 .test {
@@ -27,7 +45,7 @@ body {
   }
 }
 
-.mark {
+.is-feat {
   background: transparent;
   &:before {
     // content: attr(data-content);
@@ -42,58 +60,66 @@ body {
   }
 }
 
-.mark--liga {
-  color: tomato;
+.is-liga {
+  color: $color-liga;
   &:before {
-    text-shadow: 0 3px 0 rgba(tomato, 0.5);
-    background: rgba(tomato, 0.5);
+    text-shadow: 0 3px 0 rgba($color-liga, 0.5);
+    background: rgba($color-liga, 0.5);
   }
 }
 
-.mark--dlig {
-  color: orange;
+.is-dlig {
+  color: $color-dlig;
   &:before {
-    text-shadow: 0 3px 0 rgba(tomato, 0.5);
-    background: rgba(tomato, 0.5);
+    text-shadow: 0 3px 0 rgba($color-dlig, 0.5);
+    background: rgba($color-dlig, 0.5);
   }
 }
 
-.mark--salt {
-  color: yellow;
+.is-swsh {
+  color: $color-swsh;
   &:before {
-    text-shadow: 0 3px 0 rgba(tomato, 0.5);
-    background: rgba(tomato, 0.5);
+    text-shadow: 0 3px 0 rgba($color-swsh, 0.5);
+    background: rgba($color-swsh, 0.5);
   }
 }
 
-.mark--tnum,
-.mark--pnum {
-  color: teal;
+.is-salt {
+  color: $color-salt;
   &:before {
-    text-shadow: 0 3px 0 rgba(tomato, 0.5);
-    background: rgba(tomato, 0.5);
+    text-shadow: 0 3px 0 rgba($color-salt, 0.5);
+    background: rgba($color-salt, 0.5);
   }
 }
 
-.mark--lnum,
-.mark--onum {
-  color: pink;
+.is-calt {
+  color: $color-calt;
   &:before {
-    text-shadow: 0 3px 0 rgba(tomato, 0.5);
-    background: rgba(tomato, 0.5);
+    text-shadow: 0 3px 0 rgba($color-calt, 0.5);
+    background: rgba($color-calt, 0.5);
   }
 }
 
-.mark--ss01 {
-  color: purple;
+.is-titl {
+  color: $color-titl;
   &:before {
-    text-shadow: 0 3px 0 rgba(tomato, 0.5);
-    background: rgba(tomato, 0.5);
+    text-shadow: 0 3px 0 rgba($color-titl, 0.5);
+    background: rgba($color-titl, 0.5);
   }
 }
 
-[contenteditable] {
-  &:focus {
-    outline: 0;
+.is-lnum {
+  color: $color-lnum;
+  &:before {
+    text-shadow: 0 3px 0 rgba($color-lnum, 0.5);
+    background: rgba($color-lnum, 0.5);
+  }
+}
+
+.is-onum {
+  color: $color-onum;
+  &:before {
+    text-shadow: 0 3px 0 rgba($color-onum, 0.5);
+    background: rgba($color-onum, 0.5);
   }
 }
