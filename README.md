@@ -5,11 +5,11 @@
 -->
 # Font Feature Abettings
 
-Highlight OpenType features based on a font’s provided data.
+Highlight OpenType features based on a font’s provided data. The name is going to change at v0.1.0.
 
 ## Getting started
 
-This isn’t useful for anything yet. The data was generated in advance for one font that is excluded from the repo. Also, the name is going to change at v0.1.0.
+This isn’t useful for anything yet. The data was generated in advance for one font that is excluded from the repo.
 
 ```sh
 git clone https://github.com/kennethormandy/font-feature-abettings
