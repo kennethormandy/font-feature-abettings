@@ -99,11 +99,13 @@ window.fontFeatureAbettings = (function(el) {
         ptrns = ptrns.split(',');
         ptrns.shift();
 
-        // ffk is hard-coded as an example of where
-        // the RegExp could work better Longest phrase
-        // to shortest, array flattening would need to
-        // take this into account, too
-        var regArr = '(ffk)|(' + ptrns.join(')|(') + ')';
+        // ffk was hard-coded as an example of how
+        // more accurate, staged RegExps are needed
+        // or how they need to at least go from
+        // longest to shortest
+        // var regArr = '(ffk)|(' + …
+        var regArr = '(' + ptrns.join(')|(') + ')';
+        console.log(regArr);
         var reg = new RegExp(regArr, 'g');
 
         findAndReplaceDOMText(el, {

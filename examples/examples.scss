@@ -1,0 +1,165 @@
+// Variables
+
+$color-feat: #D9D9D9;
+$color-liga: #F04423;
+$color-dlig: #F28A35;
+$color-swsh: #3ACAE0;
+$color-calt: #91C03E;
+$color-salt: #F2C647;
+$color-titl: #ED6BA6;
+$color-onum: #DBCC4C;
+$color-lnum: #C0B49A;
+
+@font-face {
+  font-family: "Klinic Slab";
+  font-weight: 400;
+}
+//
+body {
+  font-family: "Klinic Slab";
+  margin: 2em;
+  font-size: 2rem; // Weird contenteditable + spans bug with ems in Chrome
+  -webkit-font-feature-settings: "liga" 1, "dlig" 1;
+     -moz-font-feature-settings: "liga" 1, "dlig" 1;
+          font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+[contenteditable] {
+  // Normalize contenteditable on Firefox
+  word-wrap: break-word;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.test {
+  display: block;
+  top: 0;
+  left: 33%;
+  width: 50%;
+  margin: 2rem auto;
+  font-size: 5rem;
+  float: left;
+
+  // Overlay mode
+  // ------------
+
+  // width: 33%;
+  // position: absolute;
+  // float: none;
+
+  strong {
+    font-family: Verdana;
+    font-size: 1rem;
+  }
+}
+
+.test-control {
+  z-index: -1;
+  // color: transparent;
+
+  // Normalize like contenteditable
+  word-wrap: break-word;
+
+
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+
+}
+
+.test-editable {
+  // color: transparent;
+}
+
+.is-feat {
+  background: transparent;
+  color: transparent;
+  &:before {
+    content: attr(data-content);
+    // content: '';
+    display: inline-block;
+    z-index: 1;
+    position: absolute;
+    padding: 0.125em 0.125em;
+    -webkit-transform: translate(-0.125em, -0.125em);
+       -moz-transform: translate(-0.125em, -0.125em);
+        -ms-transform: translate(-0.125em, -0.125em);
+            transform: translate(-0.125em, -0.125em);
+    // border-radius: 50%;
+    border-radius: 3px;
+  }
+}
+
+.is-liga {
+  &:before {
+    // color: transparent;
+    color: $color-liga;
+    // text-shadow: 0 3px 0 rgba($color-liga, 0.5);
+    background: rgba($color-liga, 0.5);
+  }
+}
+
+.is-dlig {
+  &:before {
+    // color: transparent;
+    color: $color-dlig;
+    // text-shadow: 0 3px 0 rgba($color-dlig, 0.5);
+    background: rgba($color-dlig, 0.5);
+  }
+}
+
+.is-swsh {
+  &:before {
+    // color: transparent;
+    color: $color-swsh;
+    // text-shadow: 0 3px 0 rgba($color-swsh, 0.5);
+    background: rgba($color-swsh, 0.5);
+  }
+}
+
+.is-salt {
+  &:before {
+    // color: transparent;
+    color: $color-salt;
+    // text-shadow: 0 3px 0 rgba($color-salt, 0.5);
+    background: rgba($color-salt, 0.5);
+  }
+}
+
+.is-calt {
+  &:before {
+    // color: transparent;
+    color: $color-calt;
+    // text-shadow: 0 3px 0 rgba($color-calt, 0.5);
+    background: rgba($color-calt, 0.5);
+  }
+}
+
+.is-titl {
+  &:before {
+    // color: transparent;
+    color: $color-titl;
+    // text-shadow: 0 3px 0 rgba($color-titl, 0.5);
+    background: rgba($color-titl, 0.5);
+  }
+}
+
+.is-lnum {
+  &:before {
+    // color: transparent;
+    color: $color-lnum;
+    // text-shadow: 0 3px 0 rgba($color-lnum, 0.5);
+    background: rgba($color-lnum, 0.5);
+  }
+}
+
+.is-onum {
+  &:before {
+    // color: transparent;
+    color: $color-onum;
+    // text-shadow: 0 3px 0 rgba($color-onum, 0.5);
+    background: rgba($color-onum, 0.5);
+  }
+}
