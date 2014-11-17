@@ -1,5 +1,5 @@
 /*!
- * Font Feature Abettings v0.0.4
+ * Font Feature Abettings v0.0.5
  * Highlight OpenType features based on a font’s provided data.
  * http://kennethormandy.com
  * Copyright © 2014 Kenneth Ormandy. Available under the MIT License.

@@ -1,6 +1,6 @@
 {
   "name": "font-feature-abettings",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Highlight OpenType features based on a font’s provided data.",
   "homepage": "https://kennethormandy.com",
   "author": "Kenneth Ormandy <hello@kennethormandy.com> (http://kennethormandy.com)",
