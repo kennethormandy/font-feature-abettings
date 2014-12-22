@@ -1,12 +1,12 @@
 /**
- * findAndReplaceDOMText v 0.4.2
- * @author James Padolsey http://james.padolsey.com
- * @license http://unlicense.org/UNLICENSE
- *
- * Matches the text of a DOM node against a regular expression
- * and replaces each match (or node-separated portions of the match)
- * in the specified element.
- */
+* findAndReplaceDOMText v 0.4.2
+* @author James Padolsey http://james.padolsey.com
+* @license http://unlicense.org/UNLICENSE
+*
+* Matches the text of a DOM node against a regular expression
+* and replaces each match (or node-separated portions of the match)
+* in the specified element.
+*/
 window.findAndReplaceDOMText = (function() {
 
 	var PORTION_MODE_RETAIN = 'retain';
@@ -79,18 +79,18 @@ window.findAndReplaceDOMText = (function() {
 	}
 
 	/**
-	 * findAndReplaceDOMText
-	 *
-	 * Locates matches and replaces with replacementNode
-	 *
-	 * @param {Node} node Element or Text node to search within
-	 * @param {RegExp} options.find The regular expression to match
-	 * @param {String|Element} [options.wrap] A NodeName, or a Node to clone
-	 * @param {String|Function} [options.replace='$&'] What to replace each match with
-	 * @param {Function} [options.filterElements] A Function to be called to check whether to
-	 *	process an element. (returning true = process element,
-	 *	returning false = avoid element)
-	 */
+	* findAndReplaceDOMText
+	*
+	* Locates matches and replaces with replacementNode
+	*
+	* @param {Node} node Element or Text node to search within
+	* @param {RegExp} options.find The regular expression to match
+	* @param {String|Element} [options.wrap] A NodeName, or a Node to clone
+	* @param {String|Function} [options.replace='$&'] What to replace each match with
+	* @param {Function} [options.filterElements] A Function to be called to check whether to
+	*	process an element. (returning true = process element,
+	*	returning false = avoid element)
+	*/
 	function findAndReplaceDOMText(node, options) {
 		return new Finder(node, options);
 	}
@@ -98,8 +98,8 @@ window.findAndReplaceDOMText = (function() {
 	exposed.Finder = Finder;
 
 	/**
-	 * Finder -- encapsulates logic to find and replace.
-	 */
+	* Finder -- encapsulates logic to find and replace.
+	*/
 	function Finder(node, options) {
 
 		options.portionMode = options.portionMode || PORTION_MODE_RETAIN;
@@ -123,8 +123,8 @@ window.findAndReplaceDOMText = (function() {
 	Finder.prototype = {
 
 		/**
-		 * Searches for all matches that comply with the instance's 'match' option
-		 */
+		* Searches for all matches that comply with the instance's 'match' option
+		*/
 		search: function() {
 
 			var match;
@@ -150,8 +150,8 @@ window.findAndReplaceDOMText = (function() {
 		},
 
 		/**
-		 * Prepares a single match with useful meta info:
-		 */
+		* Prepares a single match with useful meta info:
+		*/
 		prepMatch: function(match, matchIndex) {
 
 			if (!match[0]) {
@@ -166,8 +166,8 @@ window.findAndReplaceDOMText = (function() {
 		},
 
 		/**
-		 * Gets aggregate text within subject node
-		 */
+		* Gets aggregate text within subject node
+		*/
 		getAggregateText: function() {
 
 			var elementFilter = this.options.filterElements;
@@ -175,9 +175,9 @@ window.findAndReplaceDOMText = (function() {
 			return getText(this.node);
 
 			/**
-			 * Gets aggregate text of a node without resorting
-			 * to broken innerText/textContent
-			 */
+			* Gets aggregate text of a node without resorting
+			* to broken innerText/textContent
+			*/
 			function getText(node) {
 
 				if (node.nodeType === 3) {
@@ -201,9 +201,9 @@ window.findAndReplaceDOMText = (function() {
 		},
 
 		/**
-		 * Steps through the target node, looking for matches, and
-		 * calling replaceFn when a match is found.
-		 */
+		* Steps through the target node, looking for matches, and
+		* calling replaceFn when a match is found.
+		*/
 		processMatches: function() {
 
 			var matches = this.matches;
@@ -211,15 +211,15 @@ window.findAndReplaceDOMText = (function() {
 			var elementFilter = this.options.filterElements;
 
 			var startPortion,
-				endPortion,
-				innerPortions = [],
-				curNode = node,
-				match = matches.shift(),
-				atIndex = 0, // i.e. nodeAtIndex
-				matchIndex = 0,
-				portionIndex = 0,
-				doAvoidNode,
-				nodeStack = [node];
+			endPortion,
+			innerPortions = [],
+			curNode = node,
+			match = matches.shift(),
+			atIndex = 0, // i.e. nodeAtIndex
+			matchIndex = 0,
+			portionIndex = 0,
+			doAvoidNode,
+			nodeStack = [node];
 
 			out: while (true) {
 
@@ -319,8 +319,8 @@ window.findAndReplaceDOMText = (function() {
 		},
 
 		/**
-		 * Reverts ... TODO
-		 */
+		* Reverts ... TODO
+		*/
 		revert: function() {
 			// Reversion occurs backwards so as to avoid nodes subsequently
 			// replaced during the matching phase (a forward process):
@@ -344,176 +344,177 @@ window.findAndReplaceDOMText = (function() {
 					case '&':
 						replacement = match[0];
 						break;
-					case '`':
-						replacement = match.input.substring(0, match.startIndex);
-						break;
-					case '\'':
-						replacement = match.input.substring(match.endIndex);
-						break;
-					default:
-						replacement = match[+t];
-				}
-				return replacement;
-			});
+						case '`':
+							replacement = match.input.substring(0, match.startIndex);
+							break;
+							case '\'':
+								replacement = match.input.substring(match.endIndex);
+								break;
+								default:
+									replacement = match[+t];
+								}
+								return replacement;
+							});
 
-			if (portionMode === PORTION_MODE_FIRST) {
-				return string;
-			}
+							if (portionMode === PORTION_MODE_FIRST) {
+								return string;
+							}
 
-			if (portion.isEnd) {
-				return string.substring(portion.indexInMatch);
-			}
+							if (portion.isEnd) {
+								return string.substring(portion.indexInMatch);
+							}
 
-			return string.substring(portion.indexInMatch, portion.indexInMatch + portion.text.length);
-		},
+							return string.substring(portion.indexInMatch, portion.indexInMatch + portion.text.length);
+						},
 
-		getPortionReplacementNode: function(portion, match, matchIndex) {
+						getPortionReplacementNode: function(portion, match, matchIndex) {
 
-			var replacement = this.options.replace || '$&';
-			var wrapper = this.options.wrap;
+							var replacement = this.options.replace || '$&';
+							var wrapper = this.options.wrap;
 
-			if (wrapper && wrapper.nodeType) {
-				// Wrapper has been provided as a stencil-node for us to clone:
-				var clone = doc.createElement('div');
-				clone.innerHTML = wrapper.outerHTML || new XMLSerializer().serializeToString(wrapper);
-				wrapper = clone.firstChild;
-			}
+							if (wrapper && wrapper.nodeType) {
+								// Wrapper has been provided as a stencil-node for us to clone:
+								var clone = doc.createElement('div');
+								clone.innerHTML = wrapper.outerHTML || new XMLSerializer().serializeToString(wrapper);
+								wrapper = clone.firstChild;
+							}
 
-			if (typeof replacement == 'function') {
-				replacement = replacement(portion, match, matchIndex);
-				if (replacement && replacement.nodeType) {
-					return replacement;
-				}
-				return doc.createTextNode(String(replacement));
-			}
+							if (typeof replacement == 'function') {
+								replacement = replacement(portion, match, matchIndex);
+								if (replacement && replacement.nodeType) {
+									return replacement;
+								}
+								return doc.createTextNode(String(replacement));
+							}
 
-			var el = typeof wrapper == 'string' ? doc.createElement(wrapper) : wrapper;
+							var el = typeof wrapper == 'string' ? doc.createElement(wrapper) : wrapper;
 
-			replacement = doc.createTextNode(
-				this.prepareReplacementString(
-					replacement, portion, match, matchIndex
-				)
-			);
+							replacement = doc.createTextNode(
+								this.prepareReplacementString(
+									replacement, portion, match, matchIndex
+								)
+							);
 
-			if (!replacement.data) {
-				return replacement;
-			}
+							if (!replacement.data) {
+								return replacement;
+							}
 
-			if (!el) {
-				return replacement;
-			}
+							if (!el) {
+								return replacement;
+							}
 
-			el.appendChild(replacement);
+							el.appendChild(replacement);
 
-			return el;
-		},
+							return el;
+						},
 
-		replaceMatch: function(match, startPortion, innerPortions, endPortion) {
+						replaceMatch: function(match, startPortion, innerPortions, endPortion) {
 
-			var matchStartNode = startPortion.node;
-			var matchEndNode = endPortion.node;
+							var matchStartNode = startPortion.node;
+							var matchEndNode = endPortion.node;
 
-			var preceedingTextNode;
-			var followingTextNode;
+							var preceedingTextNode;
+							var followingTextNode;
 
-			if (matchStartNode === matchEndNode) {
+							if (matchStartNode === matchEndNode) {
 
-				var node = matchStartNode;
+								var node = matchStartNode;
 
-				if (startPortion.indexInNode > 0) {
-					// Add `before` text node (before the match)
-					preceedingTextNode = doc.createTextNode(node.data.substring(0, startPortion.indexInNode));
-					node.parentNode.insertBefore(preceedingTextNode, node);
-				}
+								if (startPortion.indexInNode > 0) {
+									// Add `before` text node (before the match)
+									preceedingTextNode = doc.createTextNode(node.data.substring(0, startPortion.indexInNode));
+									node.parentNode.insertBefore(preceedingTextNode, node);
+								}
 
-				// Create the replacement node:
-				var newNode = this.getPortionReplacementNode(
-					endPortion,
-					match
-				);
+								// Create the replacement node:
+								var newNode = this.getPortionReplacementNode(
+									endPortion,
+									match
+								);
 
-				node.parentNode.insertBefore(newNode, node);
+								node.parentNode.insertBefore(newNode, node);
 
-				if (endPortion.endIndexInNode < node.length) { // ?????
-					// Add `after` text node (after the match)
-					followingTextNode = doc.createTextNode(node.data.substring(endPortion.endIndexInNode));
-					node.parentNode.insertBefore(followingTextNode, node);
-				}
+								if (endPortion.endIndexInNode < node.length) { // ?????
+									// Add `after` text node (after the match)
+									followingTextNode = doc.createTextNode(node.data.substring(endPortion.endIndexInNode));
+									node.parentNode.insertBefore(followingTextNode, node);
+								}
 
-				node.parentNode.removeChild(node);
+								node.parentNode.removeChild(node);
 
-				this.reverts.push(function() {
-					if (preceedingTextNode === newNode.previousSibling) {
-						preceedingTextNode.parentNode.removeChild(preceedingTextNode);
-					}
-					if (followingTextNode === newNode.nextSibling) {
-						followingTextNode.parentNode.removeChild(followingTextNode);
-					}
-					newNode.parentNode.replaceChild(node, newNode);
-				});
+								this.reverts.push(function() {
+									if (preceedingTextNode === newNode.previousSibling) {
+										preceedingTextNode.parentNode.removeChild(preceedingTextNode);
+									}
+									if (followingTextNode === newNode.nextSibling) {
+										followingTextNode.parentNode.removeChild(followingTextNode);
+									}
+									newNode.parentNode.replaceChild(node, newNode);
+								});
 
-				return newNode;
+								return newNode;
 
-			} else {
-				// Replace matchStartNode -> [innerMatchNodes...] -> matchEndNode (in that order)
+							} else {
+								// Replace matchStartNode -> [innerMatchNodes...] -> matchEndNode (in that order)
 
 
-				preceedingTextNode = doc.createTextNode(
-					matchStartNode.data.substring(0, startPortion.indexInNode)
-				);
+								preceedingTextNode = doc.createTextNode(
+									matchStartNode.data.substring(0, startPortion.indexInNode)
+								);
 
-				followingTextNode = doc.createTextNode(
-					matchEndNode.data.substring(endPortion.endIndexInNode)
-				);
+								followingTextNode = doc.createTextNode(
+									matchEndNode.data.substring(endPortion.endIndexInNode)
+								);
 
-				var firstNode = this.getPortionReplacementNode(
-					startPortion,
-					match
-				);
+								var firstNode = this.getPortionReplacementNode(
+									startPortion,
+									match
+								);
 
-				var innerNodes = [];
+								var innerNodes = [];
 
-				for (var i = 0, l = innerPortions.length; i < l; ++i) {
-					var portion = innerPortions[i];
-					var innerNode = this.getPortionReplacementNode(
-						portion,
-						match
-					);
-					portion.node.parentNode.replaceChild(innerNode, portion.node);
-					this.reverts.push((function(portion, innerNode) {
-						return function() {
-							innerNode.parentNode.replaceChild(portion.node, innerNode);
-						};
-					}(portion, innerNode)));
-					innerNodes.push(innerNode);
-				}
+								for (var i = 0, l = innerPortions.length; i < l; ++i) {
+									var portion = innerPortions[i];
+									var innerNode = this.getPortionReplacementNode(
+										portion,
+										match
+									);
+									portion.node.parentNode.replaceChild(innerNode, portion.node);
+									this.reverts.push((function(portion, innerNode) {
+										return function() {
+											innerNode.parentNode.replaceChild(portion.node, innerNode);
+										};
+									}(portion, innerNode)));
+									innerNodes.push(innerNode);
+								}
 
-				var lastNode = this.getPortionReplacementNode(
-					endPortion,
-					match
-				);
+								var lastNode = this.getPortionReplacementNode(
+									endPortion,
+									match
+								);
 
-				matchStartNode.parentNode.insertBefore(preceedingTextNode, matchStartNode);
-				matchStartNode.parentNode.insertBefore(firstNode, matchStartNode);
-				matchStartNode.parentNode.removeChild(matchStartNode);
+								matchStartNode.parentNode.insertBefore(preceedingTextNode, matchStartNode);
+								matchStartNode.parentNode.insertBefore(firstNode, matchStartNode);
+								matchStartNode.parentNode.removeChild(matchStartNode);
 
-				matchEndNode.parentNode.insertBefore(lastNode, matchEndNode);
-				matchEndNode.parentNode.insertBefore(followingTextNode, matchEndNode);
-				matchEndNode.parentNode.removeChild(matchEndNode);
+								matchEndNode.parentNode.insertBefore(lastNode, matchEndNode);
+								matchEndNode.parentNode.insertBefore(followingTextNode, matchEndNode);
+								matchEndNode.parentNode.removeChild(matchEndNode);
 
-				this.reverts.push(function() {
-					preceedingTextNode.parentNode.removeChild(preceedingTextNode);
-					firstNode.parentNode.replaceChild(matchStartNode, firstNode);
-					followingTextNode.parentNode.removeChild(followingTextNode);
-					lastNode.parentNode.replaceChild(matchEndNode, lastNode);
-				});
+								this.reverts.push(function() {
+									preceedingTextNode.parentNode.removeChild(preceedingTextNode);
+									firstNode.parentNode.replaceChild(matchStartNode, firstNode);
+									followingTextNode.parentNode.removeChild(followingTextNode);
+									lastNode.parentNode.replaceChild(matchEndNode, lastNode);
+								});
 
-				return lastNode;
-			}
-		}
+								return lastNode;
+							}
+						}
 
-	};
+					};
 
-	return exposed;
+					return exposed;
 
-}());
+				}());
+				
