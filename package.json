@@ -12,20 +12,28 @@
     "font-feature-abettings.js",
     "font-feature-abettings.min.js"
   ],
+  "browserify": {
+    "transform": [
+      "decomponentify",
+      "browserify-versionify"
+    ]
+  },
   "scripts": {
+    "build-example": "browserify examples/index.js -o examples/bundle.js",
     "build-js": "browserify font-feature-abettings.js -o font-feature-abettings.min.js",
     "build": "npm run build-js",
+    "watch-example": "watchify examples/index.js -o examples/bundle.js -dv",
     "watch-js": "watchify font-feature-abettings.js -o font-feature-abettings.min.js -dv",
-    "watch": "npm run watch-js",
-    "build-test-js": "browserify -t decomponentify test/test.js -o test/test.min.js",
-    "start": "npm run watch-js & harp server -p 9040 & open http://localhost:9040/test",
+    "watch": "npm run watch-js & npm run watch-example",
+    "start": "npm run watch-js & harp server -p 9040",
     "test": "echo \"Error: no test specified…yet! Pull requests on kennethormandy/font-feature-abetting are greatly appriciated.\" && exit 1"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "browserify": "~5.10.0",
+    "browserify": "^7.0.3",
+    "browserify-versionify": "^1.0.3",
     "decomponentify": "0.0.3",
-    "watchify": "~1.0.2"
+    "watchify": "~1.0.2",
+    "domtastic": "0.7.7"
   }
 }
