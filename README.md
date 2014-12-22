@@ -8,6 +8,8 @@
 
 Collect glyph names from a font’s OpenType `gsub` data.
 
+A small, [Browserify](https://github.com/substack/node-browserify)-compatabile module that is passed a font’s list of potential substitutions (the OpenType `gsub` table) and turns them into a usable list of root character names, sorted by OpenType feature.
+
 ## Getting started
 
 This isn’t useful for anything yet. The data was generated in advance for one font that is excluded from the repo.
