@@ -1,16 +1,21 @@
 {
   "name": "font-feature-abettings",
   "version": "0.0.5",
-  "description": "Highlight OpenType features based on a font’s provided data.",
+  "description": "Collect glyph names from a font’s OpenType gsub data.",
   "homepage": "https://kennethormandy.com",
   "author": "Kenneth Ormandy <hello@kennethormandy.com> (http://kennethormandy.com)",
+  "contributors": [
+    "Kenneth Ormandy <hello@kennethormandy.com> (http://kennethormandy.com)",
+    "Brock Whitten   <brock@chloi.io>           (http://sintaxi.com)"
+  ],
   "license": "MIT",
   "private": true,
-  "repository": "git@github.com:kennethormandy/font-feature-abetting.git",
-  "keywords": [],
-  "files": [
-    "font-feature-abettings.js",
-    "font-feature-abettings.min.js"
+  "repository": "git@github.com:kennethormandy/font-feature-abettings.git",
+  "keywords": [
+    "type",
+    "typograhpy",
+    "font",
+    "tester"
   ],
   "browserify": {
     "transform": [

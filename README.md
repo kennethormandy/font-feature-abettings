@@ -3,9 +3,10 @@
 
 ***
 -->
+
 # Font Feature Abettings
 
-Highlight OpenType features based on a font’s provided data. The name is going to change at v0.1.0.
+Collect glyph names from a font’s OpenType `gsub` data.
 
 ## Getting started
 
