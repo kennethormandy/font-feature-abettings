@@ -1,7 +1,7 @@
 var component             = require('../vendor/editable.js');
 var Editable              = component('yields-editable');
 var data                  = require('./data.json');
-var fontFeatureAbettings  = require('../font-feature-abettings.js');
+var fontFeatureAbettings  = require('../index.js');
 
 var el    = document.querySelector('.js-editable');
 var ctrl  = document.querySelector('.js-control');

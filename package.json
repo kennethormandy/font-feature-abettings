@@ -3,14 +3,15 @@
   "version": "0.0.5",
   "description": "Collect glyph names from a font’s OpenType gsub data.",
   "homepage": "https://kennethormandy.com",
+  "license": "MIT",
+  "private": true,
+  "main": "index.js",
+  "repository": "git@github.com:kennethormandy/font-feature-abettings.git",
   "author": "Kenneth Ormandy <hello@kennethormandy.com> (http://kennethormandy.com)",
   "contributors": [
     "Kenneth Ormandy <hello@kennethormandy.com> (http://kennethormandy.com)",
     "Brock Whitten   <brock@chloi.io>           (http://sintaxi.com)"
   ],
-  "license": "MIT",
-  "private": true,
-  "repository": "git@github.com:kennethormandy/font-feature-abettings.git",
   "keywords": [
     "type",
     "typograhpy",
@@ -25,13 +26,11 @@
   },
   "scripts": {
     "build-example": "browserify examples/index.js -o examples/bundle.js",
-    "build-js": "browserify font-feature-abettings.js -o font-feature-abettings.min.js",
     "build": "npm run build-js",
     "watch-example": "watchify examples/index.js -o examples/bundle.js -dv",
-    "watch-js": "watchify font-feature-abettings.js -o font-feature-abettings.min.js -dv",
     "watch": "npm run watch-js & npm run watch-example",
     "start": "npm run watch-js & harp server -p 9040",
-    "test": "echo \"Error: no test specified…yet! Pull requests on kennethormandy/font-feature-abetting are greatly appriciated.\" && exit 1"
+    "test": "echo \"Error: no test specified…yet! Pull requests on kennethormandy/font-feature-abettings are greatly appriciated.\" && exit 1"
   },
   "dependencies": {},
   "devDependencies": {

@@ -1,12 +1,10 @@
-/*!
+/**
  * Font Feature Abettings __VERSION__
- * Collect glyph names from a font’s OpenType gsub data.
- * http://kennethormandy.com
- * Copyright © 2014 Kenneth Ormandy. Available under the MIT License.
+ * https://github.com/kennethormandy/font-feature-abettings
+ * @author Kenneth Ormandy http://kennethormandy.com
+ * @license Copyright © 2014 Kenneth Ormandy.
+ *          Available under the MIT license.
  */
-
-// Pass in gsub
-// Pass in gnames
 
 module.exports = function(gsub, gnames) {
 
