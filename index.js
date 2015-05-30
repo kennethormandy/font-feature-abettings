@@ -2,65 +2,64 @@
  * Font Feature Abettings __VERSION__
  * https://github.com/kennethormandy/font-feature-abettings
  * @author Kenneth Ormandy http://kennethormandy.com
- * @license Copyright © 2014 Kenneth Ormandy.
+ * @license Copyright © 2014–2015 Kenneth Ormandy.
  *          Available under the MIT license.
  */
 
-module.exports = function(gsub, gnames) {
+module.exports = function (gsub, gnames) {
 
-  var item;
-  var feat;
-  var ft;
-  var patterns = {};
-  var permitted = ['liga', 'dlig', 'lnum']; // Options
-  var figures = ['pnum', 'onum', 'lnum', 'tnum'];
-  var iterate;
+  var item
+  var feat
+  var patterns = {}
+  var permitted = ['liga', 'dlig', 'lnum'] // Options
+  var figures = ['pnum', 'onum', 'lnum', 'tnum']
+  var iterate
 
   /**
    * Flatten gsub, wizardry by @sintaxi
    */
-  iterate = function(node, prefix) {
-    var arr = [];
+  iterate = function (node, prefix) {
+    var arr = []
 
     // Nothing to do
     if (Object.prototype.toString.call(node) !== '[object Object]') {
-      return prefix || [];
+      return prefix || []
     }
 
     // Inception
     for (var key in node) {
-      arr.push(iterate(gnames[node[key]], (prefix || '') + gnames[key]));
+      arr.push(iterate(gnames[node[key]], (prefix || '') + gnames[key]))
     }
 
     // Flatten
-    return [].concat.apply([], arr);
-  };
+    // return [].concat.apply([], arr)
+    return arr
+  }
 
   /**
    * Flatten gsub table into feature names
    *
    */
-  for(feat in gsub) {
-    if(gsub.hasOwnProperty(feat)) {
-      if(figures.indexOf(feat) !== -1) {
-        // Regex and FAR need to happen separately
-        // so this can be a Regex instead of…this thing:
-        patterns[feat] = ',0,1,2,3,4,5,6,7,8,9';
-      } else if(permitted.indexOf(feat) !== -1) {
-        patterns[feat] = '';
-        for(item in gsub[feat]) {
-          var gsubPortion = gsub[feat][item];
+  for (feat in gsub) {
+    if (gsub.hasOwnProperty(feat)) {
+      if (figures.indexOf(feat) !== -1) {
+        // Hard-code numerals if there are numeral styles
+        patterns[feat] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+      } else if (permitted.indexOf(feat) !== -1) {
+        patterns[feat] = []
+        for (item in gsub[feat]) {
+          var gsubPortion = gsub[feat][item]
           // It seems like this should all be part of @sintaxi’s thing, too
-          if(gsub[feat].hasOwnProperty(item)) {
-            // if(gsubPortion.length === 1) {
-            //   console.log(gnames[gsubPortion[0]]);
+          if (gsub[feat].hasOwnProperty(item)) {
+            // if (gsubPortion.length === 1) {
+            //   console.log(gnames[gsubPortion[0]])
             // } else
-            if(Object.prototype.toString.call(gsubPortion) === '[object Object]') {
-              patterns[feat] += ',' + (iterate(gsubPortion, '' + gnames[item]));
+            if (Object.prototype.toString.call(gsubPortion) === '[object Object]') {
+              patterns[feat].push.apply(patterns[feat], iterate(gsubPortion, gnames[item]))
             }
             // else {
             //   // If it’s not an object, it’s a single character substitution
-            //   return patterns += ',' + iterate(gsub[feat]).join());
+            //   return patterns += ',' + iterate(gsub[feat]).join())
             // }
           }
         }
@@ -72,5 +71,5 @@ module.exports = function(gsub, gnames) {
    * Return flattened features
    *
    */
-  return patterns;
-};
+  return patterns
+}
