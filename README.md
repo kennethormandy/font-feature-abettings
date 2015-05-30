@@ -12,14 +12,24 @@ A small, [Browserify](https://github.com/substack/node-browserify)-compatabile m
 
 ## Getting started
 
-This isn’t useful for anything yet. The data was generated in advance for one font that is excluded from the repo.
+This is the underlying OpenType feature metadata sorter in the type tester we built for [Lost Type](http://twitter.com/losttypecoop). (If you’re interested in trying it out, [mention me on Twitter](https://twitter.com/kennethormandy) or [open an issue](https://github.com/kennethormandy/font-feature-abettings), we’re probably going to open sourcing soon!)
+
+The example is [available here](https://font-feature-abettings.surge.sh). If you’d like to run the library or tests locally, run the following commands in your terminal after installing [Node.js](https://nodejs.org):
 
 ```sh
+# Clone the repository
 git clone https://github.com/kennethormandy/font-feature-abettings
+
+# Move into the folder
 cd font-feature-abettings
-npm install -g harp
+
+# Install the dependencies using npm, which came with Node.js
 npm install
+
+# Start the example
 npm start
+
+# The example is now being served at http://localhost:9040/examples
 ```
 
 ## Notes
@@ -34,6 +44,6 @@ I manually added in:
 
 ## License
 
-The MIT License (MIT)
+[The MIT License (MIT)](LICENSE.md)
 
-Copyright © 2014 [Kenneth Ormandy](http://kennethormandy.com)
+Copyright © 2014–2015 [Kenneth Ormandy](http://kennethormandy.com)
