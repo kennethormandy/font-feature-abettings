@@ -26,10 +26,10 @@
   },
   "scripts": {
     "build-example": "browserify examples/index.js -o examples/bundle.js",
-    "build": "npm run build-js",
+    "build": "npm run build-example",
     "watch-example": "watchify examples/index.js -o examples/bundle.js -dv",
-    "watch": "npm run watch-js & npm run watch-example",
-    "start": "npm run watch-js & harp server -p 9040",
+    "watch": "npm run watch-example & npm run watch-example",
+    "start": "npm run watch-example & harp server -p 9040",
     "lint": "standard index.js",
     "test": "npm run lint && mocha test"
   },
@@ -38,10 +38,10 @@
     "browserify": "^7.0.3",
     "browserify-versionify": "^1.0.3",
     "decomponentify": "0.0.3",
-    "watchify": "~1.0.2",
-    "domtastic": "0.7.7"
+    "domtastic": "0.7.7",
     "mocha": "^2.2.5",
     "should": "^6.0.3",
     "standard": "^4.0.0",
+    "watchify": "~1.0.2"
   }
 }
