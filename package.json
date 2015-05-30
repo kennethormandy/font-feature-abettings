@@ -31,7 +31,8 @@
     "watch": "npm run watch-example & npm run watch-example",
     "start": "npm run watch-example & harp server -p 9040",
     "lint": "standard index.js",
-    "test": "npm run lint && mocha test"
+    "test": "npm run lint && mocha test",
+    "deploy-example": "harp compile ./examples ./www && surge --project ./www --domain font-feature-abettings.surge.sh"
   },
   "dependencies": {},
   "devDependencies": {
@@ -39,9 +40,11 @@
     "browserify-versionify": "^1.0.3",
     "decomponentify": "0.0.3",
     "domtastic": "0.7.7",
+    "harp": "^0.17.0",
     "mocha": "^2.2.5",
     "should": "^6.0.3",
     "standard": "^4.0.0",
+    "surge": "^0.12.0",
     "watchify": "~1.0.2"
   }
 }
