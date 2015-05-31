@@ -1,0 +1,483 @@
+{
+  "font-style": "normal",
+  "font-weight": 400,
+  "feat": [
+    "calt",
+    "dlig",
+    "liga",
+    "salt",
+    "swsh",
+    "titl"
+  ],
+  "GSUB": {
+    "latn": {
+      "DFLT": {
+        "calt": {
+          "85": [
+            280
+          ],
+          "89": [
+            267
+          ],
+          "95": [
+            269
+          ],
+          "102": [
+            274
+          ],
+          "108": [
+            282
+          ]
+        },
+        "dlig": {
+          "103": {
+            "92": 270
+          }
+        },
+        "liga": {
+          "58": {
+            "102": 229
+          },
+          "86": {
+            "102": 283,
+            "286": 284
+          },
+          "90": {
+            "102": 287
+          },
+          "99": {
+            "89": 268,
+            "107": 288
+          },
+          "102": [
+            230
+          ],
+          "106": {
+            "89": 227
+          },
+          "107": {
+            "103": 289
+          },
+          "286": [
+            260
+          ]
+        },
+        "salt": {
+          "86": [
+            277
+          ],
+          "90": [
+            273
+          ],
+          "92": [
+            275
+          ],
+          "95": [
+            278
+          ],
+          "96": [
+            276
+          ]
+        },
+        "swsh": {
+          "88": [
+            265
+          ],
+          "91": [
+            263
+          ],
+          "94": [
+            264
+          ],
+          "96": [
+            266
+          ],
+          "97": [
+            272
+          ],
+          "98": [
+            271
+          ],
+          "100": [
+            261
+          ],
+          "103": [
+            281
+          ],
+          "108": [
+            262
+          ]
+        },
+        "titl": {
+          "54": [
+            240
+          ],
+          "55": [
+            231
+          ],
+          "56": [
+            241
+          ],
+          "57": [
+            237
+          ],
+          "58": [
+            242
+          ],
+          "59": [
+            243
+          ],
+          "60": [
+            244
+          ],
+          "61": [
+            245
+          ],
+          "62": [
+            246
+          ],
+          "63": [
+            247
+          ],
+          "64": [
+            248
+          ],
+          "65": [
+            235
+          ],
+          "66": [
+            249
+          ],
+          "67": [
+            250
+          ],
+          "68": [
+            251
+          ],
+          "69": [
+            252
+          ],
+          "70": [
+            232
+          ],
+          "71": [
+            233
+          ],
+          "72": [
+            234
+          ],
+          "73": [
+            253
+          ],
+          "74": [
+            254
+          ],
+          "75": [
+            255
+          ],
+          "76": [
+            256
+          ],
+          "77": [
+            236
+          ]
+        }
+      }
+    }
+  },
+  "post": {
+    "glyphNames": {
+      "0": ".notdef",
+      "1": "NULL",
+      "2": "CR",
+      "3": "space",
+      "4": "Scaron",
+      "5": "scaron",
+      "6": "Yacute",
+      "7": "yacute",
+      "8": "Thorn",
+      "9": "thorn",
+      "10": "Zcaron",
+      "11": "zcaron",
+      "12": "onehalf",
+      "13": "onequarter",
+      "14": "onesuperior",
+      "15": "threequarters",
+      "16": "threesuperior",
+      "17": "twosuperior",
+      "18": "brokenbar",
+      "19": "minus",
+      "20": "multiply",
+      "21": "lslash",
+      "22": "exclam",
+      "23": "quotedbl",
+      "24": "numbersign",
+      "25": "dollar",
+      "26": "percent",
+      "27": "ampersand",
+      "28": "quotesingle",
+      "29": "parenleft",
+      "30": "parenright",
+      "31": "asterisk",
+      "32": "plus",
+      "33": "comma",
+      "34": "hyphen",
+      "35": "period",
+      "36": "slash",
+      "37": "zero",
+      "38": "one",
+      "39": "two",
+      "40": "three",
+      "41": "four",
+      "42": "five",
+      "43": "six",
+      "44": "seven",
+      "45": "eight",
+      "46": "nine",
+      "47": "colon",
+      "48": "semicolon",
+      "49": "less",
+      "50": "equal",
+      "51": "greater",
+      "52": "question",
+      "53": "at",
+      "54": "B",
+      "55": "C",
+      "56": "D",
+      "57": "E",
+      "58": "F",
+      "59": "G",
+      "60": "H",
+      "61": "I",
+      "62": "J",
+      "63": "K",
+      "64": "L",
+      "65": "M",
+      "66": "N",
+      "67": "O",
+      "68": "P",
+      "69": "Q",
+      "70": "R",
+      "71": "S",
+      "72": "T",
+      "73": "U",
+      "74": "V",
+      "75": "W",
+      "76": "X",
+      "77": "Y",
+      "78": "Z",
+      "79": "bracketleft",
+      "80": "backslash",
+      "81": "bracketright",
+      "82": "asciicircum",
+      "83": "underscore",
+      "84": "grave",
+      "85": "a",
+      "86": "b",
+      "87": "c",
+      "88": "d",
+      "89": "e",
+      "90": "f",
+      "91": "g",
+      "92": "h",
+      "93": "i",
+      "94": "j",
+      "95": "k",
+      "96": "l",
+      "97": "m",
+      "98": "n",
+      "99": "o",
+      "100": "p",
+      "101": "q",
+      "102": "r",
+      "103": "t",
+      "104": "u",
+      "105": "v",
+      "106": "w",
+      "107": "x",
+      "108": "y",
+      "109": "z",
+      "110": "braceleft",
+      "111": "bar",
+      "112": "braceright",
+      "113": "asciitilde",
+      "114": "Adieresis",
+      "115": "Aring",
+      "116": "Ccedilla",
+      "117": "Eacute",
+      "118": "Ntilde",
+      "119": "Odieresis",
+      "120": "Udieresis",
+      "121": "aacute",
+      "122": "agrave",
+      "123": "acircumflex",
+      "124": "adieresis",
+      "125": "atilde",
+      "126": "aring",
+      "127": "ccedilla",
+      "128": "eacute",
+      "129": "egrave",
+      "130": "ecircumflex",
+      "131": "edieresis",
+      "132": "iacute",
+      "133": "igrave",
+      "134": "icircumflex",
+      "135": "idieresis",
+      "136": "ntilde",
+      "137": "oacute",
+      "138": "ograve",
+      "139": "ocircumflex",
+      "140": "odieresis",
+      "141": "otilde",
+      "142": "uacute",
+      "143": "ugrave",
+      "144": "ucircumflex",
+      "145": "udieresis",
+      "146": "dagger",
+      "147": "degree",
+      "148": "cent",
+      "149": "sterling",
+      "150": "section",
+      "151": "bullet",
+      "152": "paragraph",
+      "153": "germandbls",
+      "154": "registered",
+      "155": "copyright",
+      "156": "trademark",
+      "157": "acute",
+      "158": "dieresis",
+      "159": "notequal",
+      "160": "AE",
+      "161": "Oslash",
+      "162": "yen",
+      "163": "ordfeminine",
+      "164": "ordmasculine",
+      "165": "ae",
+      "166": "oslash",
+      "167": "questiondown",
+      "168": "exclamdown",
+      "169": "florin",
+      "170": "approxequal",
+      "171": "guillemotleft",
+      "172": "guillemotright",
+      "173": "ellipsis",
+      "174": "Agrave",
+      "175": "Atilde",
+      "176": "Otilde",
+      "177": "OE",
+      "178": "oe",
+      "179": "endash",
+      "180": "emdash",
+      "181": "quotedblleft",
+      "182": "quotedblright",
+      "183": "quoteleft",
+      "184": "quoteright",
+      "185": "divide",
+      "186": "ydieresis",
+      "187": "Ydieresis",
+      "188": "fraction",
+      "189": "Euro",
+      "190": "guilsinglleft",
+      "191": "guilsinglright",
+      "192": "fi",
+      "193": "fl",
+      "194": "daggerdbl",
+      "195": "periodcentered",
+      "196": "quotesinglbase",
+      "197": "quotedblbase",
+      "198": "perthousand",
+      "199": "Acircumflex",
+      "200": "Ecircumflex",
+      "201": "Aacute",
+      "202": "Edieresis",
+      "203": "Egrave",
+      "204": "Iacute",
+      "205": "Icircumflex",
+      "206": "Idieresis",
+      "207": "Igrave",
+      "208": "Oacute",
+      "209": "Ocircumflex",
+      "210": "Ograve",
+      "211": "Uacute",
+      "212": "Ucircumflex",
+      "213": "Ugrave",
+      "214": "dotlessi",
+      "215": "circumflex",
+      "216": "tilde",
+      "217": "macron",
+      "218": "breve",
+      "219": "dotaccent",
+      "220": "ring",
+      "221": "cedilla",
+      "222": "hungarumlaut",
+      "223": "ogonek",
+      "224": "caron",
+      "225": "Eth",
+      "226": "eth",
+      "227": "w_e",
+      "228": "Lslash",
+      "229": "F_r",
+      "230": "r.start",
+      "231": "C.small",
+      "232": "R.small",
+      "233": "S.small",
+      "234": "T.small",
+      "235": "M.small",
+      "236": "Y.small",
+      "237": "E.small",
+      "238": "uni0000",
+      "239": "A.small",
+      "240": "B.small",
+      "241": "D.small",
+      "242": "F.small",
+      "243": "G.small",
+      "244": "H.small",
+      "245": "I.small",
+      "246": "J.small",
+      "247": "K.small",
+      "248": "L.small",
+      "249": "N.small",
+      "250": "O.small",
+      "251": "P.small",
+      "252": "Q.small",
+      "253": "U.small",
+      "254": "V.small",
+      "255": "W.small",
+      "256": "X.small",
+      "257": "Z.small",
+      "258": "parenleft.small",
+      "259": "parenright.small",
+      "260": "s.start",
+      "261": "p.swash",
+      "262": "y.swash",
+      "263": "g.swash",
+      "264": "j.swash",
+      "265": "d.swash",
+      "266": "l.swash",
+      "267": "e.end",
+      "268": "o_e",
+      "269": "k.end",
+      "270": "t_h.swash",
+      "271": "n.swash",
+      "272": "m.swash",
+      "273": "f.alt",
+      "274": "r.end",
+      "275": "h.alt",
+      "276": "l.alt",
+      "277": "b.alt",
+      "278": "k.alt",
+      "279": "t_h.alt",
+      "280": "a.end",
+      "281": "t.swash",
+      "282": "y.end",
+      "283": "b_r",
+      "284": "b_s",
+      "285": "A",
+      "286": "s",
+      "287": "f_r",
+      "288": "o_x",
+      "289": "x_t",
+      "290": "uni00A0"
+    }
+  }
+}
