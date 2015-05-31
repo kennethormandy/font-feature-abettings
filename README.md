@@ -42,6 +42,8 @@ I manually added in:
 
 …to the `liga` object. I don’t know why it was missing, while it could be an issue with the OpenType library, it’s more likely I have it broken in the tester and didn’t get the full `gsub` table.
 
+Also worth noting that the metadata won’t actually give you the three-character ligatures (at least, in Klinic Slab’s case). `f_f_l`, for example, is really just `f_f` and `f_i`, so it isn’t part of the `liga` object.
+
 ## License
 
 [The MIT License (MIT)](LICENSE.md)
