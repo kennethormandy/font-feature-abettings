@@ -1,22 +1,24 @@
-var component = require('../vendor/editable.js')
+var component = require('./vendor/editable.js')
 var Editable = component('yields-editable')
 var data = require('../test/fixtures/klinic-slab.json')
 var fontFeatureAbettings = require('../')
+var findAndReplaceDOMText = require('./vendor/findAndReplaceDOMText')
 
-var el    = document.querySelector('.js-editable')
-var ctrl  = document.querySelector('.js-control')
-var edit  = new Editable(el)
+var el = document.querySelector('.js-editable')
+var ctrl = document.querySelector('.js-control')
+var edit = new Editable(el)
 var pattenrs = fontFeatureAbettings(data.gsub, data.gnames)
 
 edit.enable()
-edit.on('state', function(e){
+edit.on('state', function (e) {
+  var ft
   e.preventDefault()
   // console.log(e)
   ctrl.innerHTML = el.innerHTML
 
   for (ft in pattenrs) {
     if (pattenrs.hasOwnProperty(ft)) {
-      p = pattenrs[ft]
+      var p = pattenrs[ft]
       // p = p.split(',')
       // p.shift()
 
@@ -32,7 +34,7 @@ edit.on('state', function(e){
       findAndReplaceDOMText(ctrl, {
         find: reg,
         wrap: 'mark',
-        replace: function(portion, match) {
+        replace: function (portion, match) {
           var e = document.createElement('mark')
           e.setAttribute('data-content', portion.text)
           e.setAttribute('data-feat', ft)

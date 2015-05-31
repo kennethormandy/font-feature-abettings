@@ -18,33 +18,39 @@
     "font",
     "tester"
   ],
+  "browserify-shim": {
+    "./examples/vendor/findAndReplaceDOMText.js": { "exports": "findAndReplaceDOMText" }
+  },
   "browserify": {
     "transform": [
       "decomponentify",
-      "browserify-versionify"
+      "browserify-versionify",
+      "browserify-shim"
     ]
   },
   "scripts": {
-    "build-example": "browserify examples/index.js -o examples/bundle.js",
+    "build-example": "browserify examples/index.js -d -o examples/bundle.js",
     "build": "npm run build-example",
     "watch-example": "watchify examples/index.js -o examples/bundle.js -dv",
     "watch": "npm run watch-example & npm run watch-example",
     "start": "npm run watch-example & harp server -p 9040",
     "lint": "standard index.js",
     "test": "npm run lint && mocha test",
-    "deploy-example": "harp compile ./examples ./www && surge --project ./www --domain font-feature-abettings.surge.sh"
+    "deploy-example": "npm run build-example && harp compile ./examples ./www && surge --project ./www --domain font-feature-abettings.surge.sh",
+    "deploy": "npm run deploy-example"
   },
   "dependencies": {},
   "devDependencies": {
-    "browserify": "^7.0.3",
-    "browserify-versionify": "^1.0.3",
-    "decomponentify": "0.0.3",
-    "domtastic": "0.7.7",
+    "browserify": "10.2.3",
+    "browserify-shim": "3.8.7",
+    "browserify-versionify": "1.0.4",
+    "decomponentify": "0.1.0",
+    "domtastic": "0.10.2",
     "harp": "^0.17.0",
     "mocha": "^2.2.5",
     "should": "^6.0.3",
     "standard": "^4.0.0",
     "surge": "^0.12.0",
-    "watchify": "~1.0.2"
+    "watchify": "^1.0.2"
   }
 }
