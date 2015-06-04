@@ -11,9 +11,19 @@ module.exports = function (gsub, gnames) {
   var item
   var feat
   var patterns = {}
-  var permitted = ['liga', 'dlig', 'lnum'] // Options
-  var figures = ['pnum', 'onum', 'lnum', 'tnum']
   var iterate
+  var figures = ['pnum', 'onum', 'lnum', 'tnum']
+  var opts = {
+    permitted: [
+      'liga',
+      'dlig',
+      'lnum',
+      'pnum',
+      'onum',
+      'lnum',
+      'tnum'
+    ]
+  }
 
   /**
    * Flatten gsub, wizardry by @sintaxi
@@ -41,11 +51,11 @@ module.exports = function (gsub, gnames) {
    *
    */
   for (feat in gsub) {
-    if (gsub.hasOwnProperty(feat)) {
+    if (gsub.hasOwnProperty(feat) && opts.permitted.indexOf(feat) !== -1) {
       if (figures.indexOf(feat) !== -1) {
         // Hard-code numerals if there are numeral styles
         patterns[feat] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-      } else if (permitted.indexOf(feat) !== -1) {
+      } else {
         patterns[feat] = []
         for (item in gsub[feat]) {
           var gsubPortion = gsub[feat][item]
