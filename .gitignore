@@ -17,3 +17,7 @@ fonts
 # Compile directories
 www/
 _book/
+
+# Fonts
+*.woff
+*.woff2
