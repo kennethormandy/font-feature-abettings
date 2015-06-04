@@ -12,7 +12,7 @@ A small, [Browserify](https://github.com/substack/node-browserify)-compatabile m
 
 ## Getting started
 
-This is the underlying OpenType feature metadata sorter in the type tester we built for [Lost Type](http://twitter.com/losttypecoop). (If you’re interested in trying it out, [mention me on Twitter](https://twitter.com/kennethormandy) or [open an issue](https://github.com/kennethormandy/font-feature-abettings), we’re probably going to open sourcing soon!)
+This is the underlying OpenType feature metadata sorter in the type tester we built for [Lost Type](http://twitter.com/losttypecoop). (If you’re interested in trying it out, [mention me on Twitter](https://twitter.com/kennethormandy) or [open an issue](https://github.com/kennethormandy/font-feature-abettings), we’re probably going to open source it soon!)
 
 The example is [available here](https://font-feature-abettings.surge.sh). If you’d like to run the library or tests locally, run the following commands in your terminal after installing [Node.js](https://nodejs.org):
 
