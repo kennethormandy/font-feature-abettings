@@ -21,12 +21,16 @@ describe('Lavanderia', function () {
     done()
   })
   it('should contain descretionary ligatures', function (done) {
-    should(patterns.dlig).containEql('th')
+    should(patterns.dlig).containEql('th') // t.swsh + th
     done()
   })
 
-  // dlig
-  // th (different, swsh t + th)
+  // it should allow you to specify options about
+  // what opentype features you actually want to
+  // search for (with the defaults being set as they are)
+
+  // then, it should allow you to search for (probably)
+  // single character alternates like `salt` and `titl`
 
   // salt
   // f, h, l, b, k
