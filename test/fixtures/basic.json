@@ -1,0 +1,35 @@
+{
+    "font-family": "Basic",
+    "font-style": "normal",
+    "font-weight": 400,
+    "feat": [
+        "liga",
+        "ss01"
+    ],
+    "gsub": {
+      "liga": {
+        "1": {
+          "2": 3
+        },
+        "4": {
+          "5": 6
+        }
+      },
+      "ss01": {
+        "7": [
+          8
+        ]
+      }
+    },
+    "gnames": {
+        "0": ".notdef",
+        "1": ".null",
+        "2": "nonmarkingreturn",
+        "3": "space",
+        "4": "exclam",
+        "5": "quotedbl",
+        "6": "numbersign",
+        "7": "dollar",
+        "8": "percent"
+    }
+}
