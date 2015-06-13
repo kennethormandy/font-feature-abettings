@@ -17,7 +17,6 @@ module.exports = function (gsub, gnames) {
     permitted: [
       'liga',
       'dlig',
-      'lnum',
       'pnum',
       'onum',
       'lnum',
