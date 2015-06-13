@@ -6,7 +6,7 @@
  *          Available under the MIT license.
  */
 
-module.exports = function (gsub, gnames) {
+module.exports = function (gsub, gnames, options) {
 
   var item
   var feat
@@ -22,6 +22,11 @@ module.exports = function (gsub, gnames) {
       'lnum',
       'tnum'
     ]
+  }
+
+  // User defined options
+  for (var o in options) {
+    opts[o] = options[o]
   }
 
   /**
