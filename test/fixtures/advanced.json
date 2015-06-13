@@ -1,0 +1,47 @@
+{
+    "font-family": "Advanced",
+    "font-style": "normal",
+    "font-weight": 400,
+    "feat": [
+        "aalt",
+        "c2sc",
+        "case",
+        "calt",
+        "dlig",
+        "liga",
+        "lnum",
+        "salt",
+        "swsh",
+        "smcp",
+        "ss01",
+        "titl",
+        "pnum",
+        "onum",
+        "lnum",
+        "tnum"
+    ],
+    "gsub": {
+      "aalt": { "1": { "2": 3 } },
+      "c2sc": { "1": { "2": 3 } },
+      "case": { "1": { "2": 3 } },
+      "calt": { "1": { "2": 3 } },
+      "dlig": { "1": { "2": 3 } },
+      "liga": { "1": { "2": 3 } },
+      "lnum": { "1": { "2": 3 } },
+      "salt": { "1": { "2": 3 } },
+      "swsh": { "1": { "2": 3 } },
+      "smcp": { "1": { "2": 3 } },
+      "ss01": { "1": { "2": 3 } },
+      "titl": { "1": { "2": 3 } },
+      "pnum": { "1": { "2": 3 } },
+      "onum": { "1": { "2": 3 } },
+      "lnum": { "1": { "2": 3 } },
+      "tnum": { "1": { "2": 3 } }
+    },
+    "gnames": {
+        "0": ".notdef",
+        "1": ".null",
+        "2": "nonmarkingreturn",
+        "3": "space"
+    }
+}

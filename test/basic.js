@@ -1,8 +1,9 @@
 var should = require('should')
 var fontFeatureAbettings = require('../')
 var basic = require('./fixtures/basic.json')
+var advanced = require('./fixtures/advanced.json')
 
-describe('Klinic Slab', function () {
+describe('Font Feature Abettings', function () {
   it('should exist', function (done) {
     var patterns = fontFeatureAbettings(basic.gsub, basic.gnames)
     should.exist(patterns)
@@ -11,12 +12,28 @@ describe('Klinic Slab', function () {
   it('should accept single permitted option', function (done) {
     var patterns = fontFeatureAbettings(basic.gsub, basic.gnames, { permitted: 'liga' })
     should.exist(patterns)
+    should.exist(patterns.liga)
+    should.not.exist(patterns.dlig)
+    should.not.exist(patterns['ss01'])
+    done()
+  })
+  it('should have appropriate defaults', function (done) {
+    var patterns = fontFeatureAbettings(advanced.gsub, advanced.gnames)
+    should.exist(patterns)
+    should.exist(patterns.liga)
+    should.exist(patterns.dlig)
+    should.exist(patterns.pnum)
+    should.exist(patterns.onum)
+    should.exist(patterns.lnum)
+    should.exist(patterns.tnum)
+    should.not.exist(patterns['ss01'])
     done()
   })
   it('should accept multiple permitted options', function (done) {
     var patterns = fontFeatureAbettings(basic.gsub, basic.gnames, { permitted: ['liga', 'ss01'] })
     should.exist(patterns)
+    should.exist(patterns.liga)
+    should.exist(patterns['ss01'])
     done()
   })
-
 })
