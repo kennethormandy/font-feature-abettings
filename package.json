@@ -1,6 +1,6 @@
 {
   "name": "font-feature-abettings",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Collect glyph names from a font’s OpenType gsub data.",
   "homepage": "https://kennethormandy.com",
   "license": "MIT",
