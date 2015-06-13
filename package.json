@@ -34,7 +34,7 @@
     "watch-example": "watchify examples/index.js -o examples/bundle.js -dv",
     "watch": "npm run watch-example & npm run watch-example",
     "start": "npm run watch-example & harp server -p 9040",
-    "lint": "standard index.js",
+    "lint": "standard *.js examples/vendor/!",
     "test": "mocha test",
     "posttest": "npm run lint",
     "deploy-example": "npm run build-example && harp compile ./examples ./www && surge --project ./www --domain font-feature-abettings.surge.sh",
